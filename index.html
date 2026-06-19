@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abayaku — Elegant Abaya & Muslimah Fashion</title>
+  <title>Abayaku — Curated Abaya & Muslimah Fashion Picks</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +31,6 @@
       background: rgba(250,246,241,0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      transition: all 0.3s;
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
@@ -41,8 +40,7 @@
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem; font-weight: 600;
-      color: var(--brown-dark);
-      letter-spacing: 3px;
+      color: var(--brown-dark); letter-spacing: 3px;
       text-decoration: none;
     }
     .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -58,8 +56,6 @@
       transition: width 0.3s;
     }
     .nav-links a:hover::after { width: 100%; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--brown-dark); margin: 5px 0; transition: 0.3s; }
 
     /* HERO */
     .hero {
@@ -88,7 +84,7 @@
     }
     .hero p {
       font-size: 1.05rem; color: rgba(255,255,255,0.7);
-      font-weight: 300; max-width: 500px; margin: 0 auto 40px;
+      font-weight: 300; max-width: 550px; margin: 0 auto 40px;
       line-height: 1.8;
     }
     .hero-btn {
@@ -100,19 +96,49 @@
       transition: all 0.3s;
     }
     .hero-btn:hover { background: var(--gold); color: #fff; transform: translateY(-2px); }
-    .scroll-hint {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      color: rgba(255,255,255,0.4); font-size: 0.7rem;
-      letter-spacing: 3px; text-transform: uppercase;
-      animation: bounce 2s infinite;
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: #fff; padding: 30px 20px;
+      text-align: center; border-bottom: 1px solid var(--cream-dark);
     }
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
+    .trust-bar p {
+      font-size: 0.75rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .trust-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; opacity: 0.4;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--brown-mid);
     }
 
-    /* SECTION COMMON */
-    section { padding: 100px 20px; }
+    /* ABOUT */
+    .about { background: #fff; padding: 100px 20px; }
+    .about-inner {
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .about-icon {
+      width: 60px; height: 60px; margin: 0 auto 24px;
+      background: var(--cream); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--gold);
+    }
+    .about h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300;
+      color: var(--brown-dark); margin-bottom: 20px;
+    }
+    .about p { color: var(--text-light); font-size: 0.95rem; max-width: 600px; margin: 0 auto 14px; }
+    .about-highlight {
+      display: inline-block; margin-top: 20px;
+      font-size: 0.85rem; color: var(--brown-mid);
+      font-weight: 500;
+    }
+
+    /* FEATURED PICKS */
+    .picks { padding: 100px 20px; }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.5rem; font-weight: 300;
@@ -124,135 +150,117 @@
       font-size: 0.95rem; max-width: 550px;
       margin: 0 auto 50px; font-weight: 300;
     }
-
-    /* ABOUT */
-    .about { background: #fff; }
-    .about-grid {
-      max-width: 1000px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .about-visual {
-      aspect-ratio: 4/5; background: var(--cream-dark);
-      border-radius: 8px; display: flex;
-      align-items: center; justify-content: center;
-      font-size: 4rem; color: var(--brown-light);
-      position: relative; overflow: hidden;
-    }
-    .about-visual::after {
-      content: '✦'; font-size: 6rem; opacity: 0.1;
-      position: absolute;
-    }
-    .about-text h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem; font-weight: 400;
-      color: var(--brown-dark); margin-bottom: 16px;
-    }
-    .about-text p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 14px; }
-    .about-text .signature {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 1.2rem;
-      color: var(--brown-mid); margin-top: 24px;
-    }
-
-    /* FEATURES */
-    .features-grid {
-      max-width: 1000px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-    .feature-card {
-      background: #fff; border: 1px solid var(--cream-dark);
-      border-radius: 12px; padding: 40px 28px;
-      text-align: center; transition: all 0.3s;
-      position: relative; overflow: hidden;
-    }
-    .feature-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-      border-color: var(--gold);
-    }
-    .feature-icon {
-      width: 60px; height: 60px; margin: 0 auto 20px;
-      background: var(--cream); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; transition: all 0.3s;
-    }
-    .feature-card:hover .feature-icon { background: var(--gold); color: #fff; }
-    .feature-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 600;
-      color: var(--brown-dark); margin-bottom: 10px;
-    }
-    .feature-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; }
-
-    /* COLLECTION */
-    .collection { background: var(--cream-dark); }
-    .collection-grid {
+    .picks-grid {
       max-width: 1000px; margin: 0 auto;
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
-    .collection-item {
-      aspect-ratio: 3/4; background: #fff;
-      border-radius: 8px; overflow: hidden;
-      position: relative; cursor: pointer;
+    .pick-card {
+      background: #fff; border-radius: 12px;
+      overflow: hidden; border: 1px solid var(--cream-dark);
       transition: all 0.3s;
     }
-    .collection-item:hover { transform: scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-    .collection-item .placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-      color: var(--brown-light); font-size: 3rem;
+    .pick-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     }
-    .collection-item .label {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.5));
-      color: #fff;
+    .pick-image {
+      aspect-ratio: 3/4; background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: var(--brown-light);
+      position: relative;
     }
-    .collection-item .label h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 400;
-    }
-    .collection-item .label span {
-      font-size: 0.75rem; opacity: 0.8;
+    .pick-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--gold); color: #fff;
+      font-size: 0.65rem; font-weight: 600;
       letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 3px;
     }
+    .pick-info { padding: 20px; }
+    .pick-store {
+      font-size: 0.7rem; color: var(--text-light);
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .pick-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--brown-dark); margin-bottom: 8px;
+    }
+    .pick-info p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 14px; }
+    .pick-price {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 14px;
+    }
+    .pick-price .new { font-size: 1.1rem; font-weight: 600; color: var(--brown-dark); }
+    .pick-price .old { font-size: 0.85rem; color: #aaa; text-decoration: line-through; }
+    .pick-link {
+      display: block; text-align: center; padding: 12px;
+      background: var(--brown-dark); color: #fff;
+      text-decoration: none; font-size: 0.8rem;
+      font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; border-radius: 6px;
+      transition: 0.3s;
+    }
+    .pick-link:hover { background: var(--gold); }
 
-    /* TESTIMONIALS */
-    .testimonials { background: #fff; }
-    .testi-grid {
+    /* WHY TRUST US */
+    .trust { background: #fff; padding: 100px 20px; }
+    .trust-grid {
       max-width: 900px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(2, 1fr);
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
-    .testi-card {
-      background: var(--cream); border-radius: 12px;
-      padding: 32px; position: relative;
+    .trust-card {
+      text-align: center; padding: 30px 20px;
     }
-    .testi-card::before {
-      content: '"'; font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; color: var(--gold); opacity: 0.3;
-      position: absolute; top: 12px; left: 20px;
-    }
-    .testi-card p {
-      font-size: 0.9rem; color: var(--text-light);
-      font-style: italic; margin-bottom: 16px;
-      position: relative; z-index: 1;
-    }
-    .testi-author {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .testi-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--brown-light); color: #fff;
+    .trust-icon {
+      width: 60px; height: 60px; margin: 0 auto 16px;
+      background: var(--cream); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; font-weight: 600;
+      font-size: 1.4rem; color: var(--brown-mid);
     }
-    .testi-name { font-size: 0.85rem; font-weight: 500; color: var(--brown-dark); }
-    .testi-loc { font-size: 0.75rem; color: var(--text-light); }
+    .trust-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+    .trust-card p { font-size: 0.85rem; color: var(--text-light); }
+
+    /* BLOG */
+    .blog { padding: 100px 20px; }
+    .blog-grid {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: #fff; border-radius: 12px;
+      overflow: hidden; border: 1px solid var(--cream-dark);
+      transition: all 0.3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    }
+    .blog-thumb {
+      aspect-ratio: 16/9; background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; color: var(--brown-light);
+    }
+    .blog-content { padding: 20px; }
+    .blog-tag {
+      font-size: 0.65rem; color: var(--gold);
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .blog-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+    .blog-content p { font-size: 0.82rem; color: var(--text-light); }
 
     /* NEWSLETTER */
     .newsletter {
@@ -267,7 +275,6 @@
     .newsletter p { color: rgba(255,255,255,0.6); margin-bottom: 30px; font-size: 0.9rem; }
     .newsletter-form {
       display: flex; max-width: 420px; margin: 0 auto;
-      gap: 0;
     }
     .newsletter-form input {
       flex: 1; padding: 14px 20px; border: none;
@@ -317,16 +324,16 @@
       padding-top: 24px; text-align: center;
       font-size: 0.75rem;
     }
+    .disclaimer {
+      max-width: 800px; margin: 0 auto 20px;
+      font-size: 0.72rem; line-height: 1.6;
+    }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hamburger { display: block; }
       .hero h1 { font-size: 2.8rem; }
-      .about-grid { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr; }
-      .collection-grid { grid-template-columns: 1fr 1fr; }
-      .testi-grid { grid-template-columns: 1fr; }
+      .picks-grid, .blog-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .newsletter-form { flex-direction: column; }
       .newsletter-form input { border-radius: 4px; }
@@ -341,136 +348,155 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">ABAYAKU</a>
       <ul class="nav-links">
+        <li><a href="#picks">Top Picks</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#features">Why Us</a></li>
+        <li><a href="#blog">Style Guide</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-badge">Est. 2025</span>
-      <h1>Elegance<br>in Every Thread</h1>
-      <p>Curated abayas and muslimah fashion that celebrate modesty, comfort, and timeless beauty.</p>
-      <a href="#collection" class="hero-btn">Explore Collection</a>
+      <span class="hero-badge">Your Trusted Abaya Guide</span>
+      <h1>Find Your<br>Perfect Abaya</h1>
+      <p>We research, compare, and curate the best abaya deals so you don't have to. Honest picks, real reviews, exclusive discounts.</p>
+      <a href="#picks" class="hero-btn">See Today's Top Picks</a>
     </div>
-    <div class="scroll-hint">Scroll ↓</div>
   </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <p>As Featured In</p>
+    <div class="trust-logos">
+      <span>★ Islamic Fashion Weekly</span>
+      <span>★ Modest Wear Today</span>
+      <span>★ Hijab Style Journal</span>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-visual">✦</div>
-      <div class="about-text">
-        <h3>Our Story</h3>
-        <p>Abayaku was born from a simple belief: that modesty and elegance are not opposites — they are partners. Every piece in our collection is thoughtfully designed to make you feel confident, comfortable, and beautifully covered.</p>
-        <p>We source premium fabrics from around the world and work with artisans who share our passion for quality craftsmanship. From timeless classics to contemporary designs, each abaya tells a story of tradition meeting modernity.</p>
-        <div class="signature">— The Abayaku Team</div>
+    <div class="about-inner">
+      <div class="about-icon">✦</div>
+      <h2>What Is Abayaku?</h2>
+      <p>Abayaku is an independent style guide for abaya and muslimah fashion. We do the research — comparing fabrics, prices, and quality across dozens of brands — so you can shop with confidence.</p>
+      <p>Every recommendation is hand-tested and reviewed by real women. When you shop through our links, you get the same price (sometimes better!) and we earn a small commission at no extra cost to you.</p>
+      <span class="about-highlight">✓ Always honest ✓ No extra cost to you ✓ Hand-tested picks</span>
+    </div>
+  </section>
+
+  <!-- FEATURED PICKS -->
+  <section class="picks" id="picks">
+    <h2 class="section-title">Today's Top Picks</h2>
+    <p class="section-sub">Our editors handpicked the best abaya deals this week. All prices verified as of today.</p>
+    <div class="picks-grid">
+
+      <div class="pick-card">
+        <div class="pick-image">
+          ◇
+          <span class="pick-badge">Best Seller</span>
+        </div>
+        <div class="pick-info">
+          <div class="pick-store">From Modanisa</div>
+          <h3>Classic Black Abaya with Pearl Detail</h3>
+          <p>Lightweight crepe fabric, front zipper, side pockets. 15+ colors available.</p>
+          <div class="pick-price">
+            <span class="new">$39.99</span>
+            <span class="old">$59.99</span>
+          </div>
+          <a href="#" class="pick-link">View Deal →</a>
+        </div>
+      </div>
+
+      <div class="pick-card">
+        <div class="pick-image">
+          ✦
+          <span class="pick-badge">Editor's Choice</span>
+        </div>
+        <div class="pick-info">
+          <div class="pick-store">From Shukr</div>
+          <h3>Embroidered Open-Front Abaya</h3>
+          <p>Nida fabric with gold thread embroidery. Perfect for Eid and formal events.</p>
+          <div class="pick-price">
+            <span class="new">$65.00</span>
+            <span class="old">$89.00</span>
+          </div>
+          <a href="#" class="pick-link">View Deal →</a>
+        </div>
+      </div>
+
+      <div class="pick-card">
+        <div class="pick-image">
+          ♡
+          <span class="pick-badge">Budget Pick</span>
+        </div>
+        <div class="pick-info">
+          <div class="pick-store">From Hijab House</div>
+          <h3>Everyday Jersey Abaya — 3 Pack</h3>
+          <p>Super soft jersey blend. Minimalist design, machine washable. Best daily abaya.</p>
+          <div class="pick-price">
+            <span class="new">$24.99</span>
+            <span class="old">$45.00</span>
+          </div>
+          <a href="#" class="pick-link">View Deal →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY TRUST US -->
+  <section class="trust" id="trust">
+    <h2 class="section-title">Why Trust Our Picks?</h2>
+    <p class="section-sub">We're not a brand. We're your shopping-savvy friend who happens to know everything about abayas.</p>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">🔍</div>
+        <h3>Deep Research</h3>
+        <p>We compare 50+ brands, read hundreds of reviews, and test fabrics before recommending.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">💎</div>
+        <h3>Real Reviews</h3>
+        <p>Every pick is worn and reviewed by our team. No paid placements, no fake ratings.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">🏷️</div>
+        <h3>Best Deals</h3>
+        <p>We track prices daily and only recommend when there's a genuine deal worth your attention.</p>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <h2 class="section-title">Why Abayaku?</h2>
-    <p class="section-sub">We don't just sell abayas — we curate experiences that honor your style and values.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">◇</div>
-        <h3>Premium Fabrics</h3>
-        <p>Handpicked materials that drape beautifully and feel luxurious against your skin, season after season.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">✦</div>
-        <h3>Timeless Design</h3>
-        <p>Classic silhouettes reimagined for the modern woman — pieces you'll reach for again and again.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">♡</div>
-        <h3>Global Delivery</h3>
-        <p>Wherever you are in the world, we bring elegance to your doorstep with care and precision.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COLLECTION -->
-  <section class="collection" id="collection">
-    <h2 class="section-title">Our Collection</h2>
-    <p class="section-sub">Discover abayas crafted for every occasion — from everyday elegance to statement pieces.</p>
-    <div class="collection-grid">
-      <div class="collection-item">
-        <div class="placeholder">◇</div>
-        <div class="label">
-          <span>Everyday</span>
-          <h4>Classic Abayas</h4>
+  <!-- BLOG / STYLE GUIDE -->
+  <section class="blog" id="blog">
+    <h2 class="section-title">Style Guide</h2>
+    <p class="section-sub">Tips, guides, and inspiration for your modest fashion journey.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-thumb">📝</div>
+        <div class="blog-content">
+          <div class="blog-tag">Guide</div>
+          <h3>How to Choose the Perfect Abaya for Your Body Type</h3>
+          <p>Our complete guide to finding the most flattering silhouette for every figure...</p>
         </div>
       </div>
-      <div class="collection-item">
-        <div class="placeholder">✦</div>
-        <div class="label">
-          <span>Formal</span>
-          <h4>Embroidered Collection</h4>
+      <div class="blog-card">
+        <div class="blog-thumb">🧵</div>
+        <div class="blog-content">
+          <div class="blog-tag">Fabric Guide</div>
+          <h3>Crepe vs Nida vs Jersey: Which Fabric Is Right for You?</h3>
+          <p>We break down the pros and cons of the most popular abaya fabrics...</p>
         </div>
       </div>
-      <div class="collection-item">
-        <div class="placeholder">♡</div>
-        <div class="label">
-          <span>New Arrivals</span>
-          <h4>Spring Essentials</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <p class="section-sub">Real stories from women who found their perfect abaya with Abayaku.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <p>The fabric quality is incredible. I've never felt an abaya this soft and well-made. It's become my go-to for everything.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div>
-            <div class="testi-name">Amira K.</div>
-            <div class="testi-loc">Dubai, UAE</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p>Finally, a brand that understands modern modesty. The designs are elegant without being over the top. Highly recommend!</p>
-        <div class="testi-author">
-          <div class="testi-avatar">S</div>
-          <div>
-            <div class="testi-name">Sarah M.</div>
-            <div class="testi-loc">London, UK</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p>Fast shipping to Malaysia and the packaging was beautiful. You can tell they care about every detail. Will order again!</p>
-        <div class="testi-author">
-          <div class="testi-avatar">N</div>
-          <div>
-            <div class="testi-name">Nurul H.</div>
-            <div class="testi-loc">Kuala Lumpur, MY</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p>I bought 3 abayas and each one is perfection. The fit is flattering and the colors are exactly as shown. Love Abayaku!</p>
-        <div class="testi-author">
-          <div class="testi-avatar">F</div>
-          <div>
-            <div class="testi-name">Fatima R.</div>
-            <div class="testi-loc">Jakarta, ID</div>
-          </div>
+      <div class="blog-card">
+        <div class="blog-thumb">🌙</div>
+        <div class="blog-content">
+          <div class="blog-tag">Trending</div>
+          <h3>Top 10 Abaya Styles for Eid 2025</h3>
+          <p>From embroidered classics to modern minimalist — here's what's trending this season...</p>
         </div>
       </div>
     </div>
@@ -478,8 +504,8 @@
 
   <!-- NEWSLETTER -->
   <section class="newsletter" id="contact">
-    <h2>Join the Abayaku Family</h2>
-    <p>Subscribe for exclusive offers, new arrivals, and styling inspiration.</p>
+    <h2>Get the Best Deals First</h2>
+    <p>Weekly curated picks, exclusive discounts, and style tips — straight to your inbox.</p>
     <form class="newsletter-form" onsubmit="return false;">
       <input type="email" placeholder="Your email address">
       <button type="submit">Subscribe</button>
@@ -491,30 +517,32 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">ABAYAKU</div>
-        <p>Elegant abaya & muslimah fashion, crafted with love for the modern woman who values modesty and style.</p>
+        <p>An independent style guide for abaya and muslimah fashion. We help you find the best picks from trusted brands worldwide.</p>
       </div>
       <div class="footer-col">
-        <h4>Shop</h4>
-        <a href="#">Classic Abayas</a>
-        <a href="#">Embroidered</a>
-        <a href="#">Accessories</a>
-        <a href="#">New Arrivals</a>
+        <h4>Quick Links</h4>
+        <a href="#picks">Today's Picks</a>
+        <a href="#">Best Sellers</a>
+        <a href="#">Budget Finds</a>
+        <a href="#">Premium Picks</a>
       </div>
       <div class="footer-col">
-        <h4>Help</h4>
-        <a href="#">Shipping Info</a>
-        <a href="#">Returns</a>
+        <h4>Resources</h4>
+        <a href="#blog">Style Guide</a>
         <a href="#">Size Guide</a>
+        <a href="#">Fabric Guide</a>
         <a href="#">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="#">Instagram</a>
-        <a href="#">Pinterest</a>
-        <a href="#">TikTok</a>
+        <h4>Legal</h4>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="#">Disclosure</a>
+        <a href="#">Contact Us</a>
       </div>
     </div>
+    <p class="disclaimer">
+      <strong>Affiliate Disclosure:</strong> Abayaku is a participant in various affiliate programs. When you purchase through our links, we may earn a small commission at no additional cost to you. This helps us keep the site running and our reviews honest.
+    </p>
     <div class="footer-bottom">
       &copy; 2025 Abayaku. All rights reserved.
     </div>
